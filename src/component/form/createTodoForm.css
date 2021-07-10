@@ -1,0 +1,31 @@
+.formContainer {
+    background: #765D69;
+    padding-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.input {
+    width: 500px;
+    height: 60px;
+    background: aliceblue;
+    border: none;
+    border-radius: 20px;
+    display: block;
+    padding: 0 15px 0 15px;
+    margin-top: 25px;
+}
+
+.btn {
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background: #F1828D;
+    margin: 30px;
+    transition: 1s;
+}
+
+.btn:hover {
+    background: #FCD0BA;
+}

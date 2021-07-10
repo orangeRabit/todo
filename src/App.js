@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+
 import './App.css';
+import {useSelector} from "react-redux";
+
+import CreateTodoForm from "./component/form/createTodoForm";
+
+
+
 
 function App() {
+  const store = useSelector(state => state)
+  const onTodoCreate = async (title, description) => {
+      if (!title || !description) return;
+
+      const response= await fetch('http://localhost:8888', {
+          method: 'POST',
+          body: JSON.stringify({title, description})
+      })
+      const data = await response.json();
+      console.log(data);
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CreateTodoForm />
     </div>
   );
 }
